@@ -42,7 +42,7 @@ const FilterSection = () => {
   return (
     <div
       className={
-        'bg-white shadow-lg rounded-lg p-4 w-full max-w-md flex flex-col justify-between'
+        'bg-white shadow-lg rounded-lg p-4 w-full max-w-md flex flex-col justify-between h-fit'
       }
     >
       <div>
