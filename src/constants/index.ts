@@ -1,4 +1,3 @@
-export const baseUrlVehicle =
-  'https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType'
-export const baseUrlMakeIdYear =
-  'https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeIdYear'
+export const baseUrlVehicle = process.env.NEXT_PUBLIC_BASE_URL_VEHICLE
+export const baseUrlMakeIdYear = process.env.NEXT_PUBLIC_BASE_URL_YEAR
+
