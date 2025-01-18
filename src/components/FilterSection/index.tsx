@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react'
 
 import Image from 'next/image'
 
-import { fetchMakes } from '@/app/utils/api'
-import { getCurrentYear } from '@/app/utils/getCurrentYear'
+import { fetchMakes } from '@/utils/api'
+import { getCurrentYear } from '@/utils/getCurrentYear'
 
 import Button from '../Button'
 import Dropdown from '../Dropdown'
 
-import { Make } from '@/app/types'
+import { Make } from '@/types'
 
 const FilterSection = () => {
   const [makes, setMakes] = useState<Make[]>([])

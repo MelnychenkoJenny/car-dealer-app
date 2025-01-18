@@ -1,6 +1,6 @@
 'use client'
 
-import FilterSection from './components/FilterSection'
+import FilterSection from '@/components/FilterSection'
 
 export default function FilterPage() {
   return (

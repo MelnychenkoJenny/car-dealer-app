@@ -1,4 +1,4 @@
-import { Models } from '@/app/types'
+import { Models } from '@/types'
 
 export interface ModelsListPropstype {
   models: Models[]

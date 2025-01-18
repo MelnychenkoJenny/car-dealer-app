@@ -2,13 +2,13 @@ import { Suspense } from 'react'
 
 import Image from 'next/image'
 
-import Button from '@/app/components/Button'
-import Loader from '@/app/components/Loader'
-import ModelsList from '@/app/components/ModelsList'
-import { fetchMakes, fetchModels } from '@/app/utils/api'
-import { getCurrentYear } from '@/app/utils/getCurrentYear'
+import Button from '@/components/Button'
+import Loader from '@/components/Loader'
+import ModelsList from '@/components/ModelsList'
+import { fetchMakes, fetchModels } from '@/utils/api'
+import { getCurrentYear } from '@/utils/getCurrentYear'
 
-import { Models, Params } from '@/app/types'
+import { Models, Params } from '@/types'
 
 export async function generateStaticParams() {
   const makes = await fetchMakes()
