@@ -48,6 +48,7 @@ export default async function ResultPage({
               <span className={'text-blue-600'}>{year}</span>
             </h1>
             <ModelsList models={models} />
+            <Button isDisabled={false} link={'/'} label={'Go HOME'} />
           </div>
         ) : (
           <div className={'flex flex-col justify-evenly'}>
