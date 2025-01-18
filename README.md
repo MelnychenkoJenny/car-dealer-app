@@ -14,7 +14,7 @@ This web application allows users to view car models for a selected make and yea
 - [Next.js](https://nextjs.org/) — A framework for server-side rendering React applications.
 - [Tailwind CSS](https://tailwindcss.com/) — A CSS framework for rapid styling.
 - [React](https://reactjs.org/) — A library for building user interfaces.
-- [API](https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeIdYear/makeId/{makeId}/modelyear/{year}?format=json) for fetching car models.
+- [API](https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json) for fetching car models.
 
 ## Running the Project Locally
 
@@ -36,7 +36,7 @@ npm install
 yarn install
 pnpm install
 ```
-
+You also need to create .env.local file in the root, and add environment variables. The names can also be found in the env.default file
 
 ### 3. Start the local server
 
