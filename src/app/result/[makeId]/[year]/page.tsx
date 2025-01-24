@@ -1,14 +1,11 @@
 import { Suspense } from 'react'
 
-import Image from 'next/image'
-
-import Button from '@/components/Button'
 import Loader from '@/components/Loader'
 import ModelsList from '@/components/ModelsList'
-import { fetchMakes, fetchModels } from '@/utils/api'
+import { fetchMakes } from '@/utils/api'
 import { getCurrentYear } from '@/utils/getCurrentYear'
 
-import { Models, Params } from '@/types'
+import { Params } from '@/types'
 
 export async function generateStaticParams() {
   const makes = await fetchMakes()
@@ -30,7 +27,6 @@ export default async function ResultPage({
   params: Promise<Params>
 }) {
   const { makeId, year } = await params
-  const models = (await fetchModels(makeId, year)) as Models[]
 
   return (
     <main
@@ -39,35 +35,7 @@ export default async function ResultPage({
       }
     >
       <Suspense fallback={<Loader />}>
-        {models.length > 0 ? (
-          <div>
-            <h1 className={'text-3xl font-semibold text-gray-800 mb-6'}>
-              {'Models for Make: '}
-              <span className={'text-blue-600'}>{models[0].Make_Name}</span>
-              {' and Year: '}
-              <span className={'text-blue-600'}>{year}</span>
-            </h1>
-            <ModelsList models={models} />
-            <Button isDisabled={false} link={'/'} label={'Go HOME'} />
-          </div>
-        ) : (
-          <div className={'flex flex-col justify-evenly'}>
-            <p className={'text-2xl font-extrabold text-blue-600 text-center'}>
-              {'No models found for this combination.'}
-            </p>
-            <div className={'flex justify-center'}>
-              <Image
-                alt={'Sad Car Image'}
-                className={'w-[400px] h-auto'}
-                height={100}
-                priority
-                src={'/emptyCar.png'}
-                width={400}
-              />
-            </div>
-            <Button isDisabled={false} link={'/'} label={'Go HOME'} />
-          </div>
-        )}
+        <ModelsList makeId={makeId} year={year} />
       </Suspense>
     </main>
   )

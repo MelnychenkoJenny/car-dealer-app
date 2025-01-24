@@ -1,5 +1,6 @@
 export * from './Button'
 export * from './Dropdown'
+export * from './EmptyMidelsList'
 export * from './FilterSection'
 export * from './Loader'
 export * from './ModelsList'
